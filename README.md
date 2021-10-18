@@ -1,2 +1,3 @@
 # magisterka---javascript
 sdasdasdas
+sadasd
