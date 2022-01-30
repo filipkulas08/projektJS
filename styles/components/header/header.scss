@@ -1,0 +1,30 @@
+.first-header {
+    background-color: $midnight;
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+
+    .col {
+        @include for-up-to-desktop {
+            justify-content: flex-start;
+        }
+
+        align-items: center;
+        display: flex;
+        height: 90px;
+        justify-content: space-between;
+        margin: auto;
+        max-width: 1440px;
+
+        .logo img {
+            @include for-up-to-desktop {
+                min-height: 40px;
+                margin-left: 80px;
+            }
+
+            width: 90px;
+        }
+    }
+}

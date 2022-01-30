@@ -1,0 +1,14 @@
+.desktop-hidden {
+    @include for-desktop-up {
+        display: none;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+// .section {
+//     position: relative;
+//     z-index: 1;
+// }

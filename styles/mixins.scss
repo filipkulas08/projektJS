@@ -1,0 +1,43 @@
+//Media
+
+@mixin for-phone {
+    @media (max-width: $breakpoint-phone) {
+        @content;
+    }
+}
+
+@mixin for-up-to-tablet-vertical {
+    @media (max-width: $breakpoint-tablet-vertical) {
+        @content;
+    }
+}
+
+@mixin for-tablet-vertical-up {
+    @media (min-width: $breakpoint-tablet-vertical-up) {
+        @content;
+    }
+}
+
+@mixin for-tablet-horizontal {
+    @media (max-width: $breakpoint-tablet-horizontal) {
+        @content;
+    }
+}
+
+@mixin for-tablet-horizontal-up {
+    @media (min-width: $breakpoint-tablet-horizontal-up) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: $breakpoint-desktop-up) {
+        @content;
+    }
+}
+
+@mixin for-up-to-desktop {
+    @media (max-width: $breakpoint-desktop-up) {
+        @content;
+    }
+}

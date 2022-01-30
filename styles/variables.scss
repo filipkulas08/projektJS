@@ -1,0 +1,28 @@
+//paths
+$images: '/projektJS/images';
+$fonts: '/projektJS/fonts';
+$icons: '/projektJS/icons';
+
+//fonts
+//colors
+
+$midnight: #011736;
+$white: #ffffff;
+$black: #000000;
+//screen sizes
+$section-width: 1440px;
+
+$breakpoint-phone: 599px;
+$breakpoint-tablet-vertical: 767px;
+$breakpoint-tablet-vertical-up: 768px;
+$breakpoint-tablet-horizontal: 1023px;
+$breakpoint-tablet-horizontal-up: 1024px;
+$breakpoint-desktop: 1169px;
+$breakpoint-desktop-up: 1170px;
+$breakpoint-desktop-secondary-up: 1200px;
+$breakpoint-desktop-large: 1439px;
+$breakpoint-desktop-large-up: $section-width;
+$breakpoint-desktop-large-secondary: 1599px;
+$breakpoint-desktop-big-up: 1800px;
+
+$grid-columns: 12;

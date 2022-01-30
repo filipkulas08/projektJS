@@ -1,0 +1,123 @@
+.main-nav {
+    @include for-desktop-up {
+        border: 0;
+        height: 100%;
+        justify-content: center;
+        opacity: 1;
+        padding-left: 20px;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+
+    align-items: center;
+    display: flex;
+    height: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: all .5s;
+    width: 100%;
+    z-index: -1;
+
+    .menu-item-level-1 {
+        float: left;
+        padding-right: 32px;
+
+        a {
+            color: white;
+            font-size: 18px;
+        }
+
+        &.active-li a {
+            color: red;
+            //font-family: 'Courier New', Courier, monospace;
+        }
+    }
+}
+
+.mobile-nav {
+    position: absolute;
+
+    &.open {
+        @include for-desktop-up {
+            display: none;
+        }
+
+        background-color: $midnight;
+        display: flex;
+        flex-direction: column;
+        height: 180px;
+        left: 0;
+        outline: 1px solid $white;
+        top: 90px;
+        width: 100%;
+
+        .menu-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-top: 12px;
+        }
+    }
+
+    .menu-wrapper {
+        color: $white;
+        display: none;
+        height: 100%;
+        left: 0;
+        list-style: none;
+        margin: 0;
+        overflow-y: auto;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        li {
+            &.menu-item-level-1 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            a {
+                color: $white;
+                font-size: 28px;
+                text-align: center;
+            }
+        }
+
+        .menu-link-level-1 {
+            font-size: 18px;
+
+            &.active-a {
+                color: yellow;
+            }
+        }
+    }
+
+    .menu-link-level-1 {
+        display: block;
+        height: 100%;
+        padding: 12px 4px;
+        width: 100%;
+    }
+
+    .navigation-title {
+        background-image: url(/projektJS/icons/burger-menu.png);
+        background-size: 44px;
+        background-repeat: no-repeat;
+        background-position: left;
+        height: 44px;
+        width: 44px;
+        z-index: 2;
+        cursor: pointer;
+        margin-left: 20px;
+        filter: invert(1);
+
+        &.open {
+            background-image: url(/projektJS/icons/close.png);
+            position: absolute;
+            top: -67px;
+        }
+    }
+}
