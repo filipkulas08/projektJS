@@ -13,13 +13,25 @@
         }
     }
 
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-}
 
-@for $i from 1 through $grid-columns {
-    .col-small-#{$i}-of-#{$grid-columns} {
-        box-sizing: border-box;
-        width: percentage($i / $grid-columns);
+    .col {
+        @for $i from 1 through $grid-columns {
+            &.col-small-#{$i}-of-#{$grid-columns} {
+                box-sizing: border-box;
+                width: percentage($i / $grid-columns);
+            }
+        }
+
+        @include for-desktop-up {
+            @for $i from 1 through $grid-columns {
+                &.col-large-#{$i}-of-#{$grid-columns} {
+                    box-sizing: border-box;
+                    width: percentage($i / $grid-columns);
+                }
+            }
+        }
     }
 }

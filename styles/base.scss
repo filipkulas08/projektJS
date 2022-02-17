@@ -8,6 +8,68 @@ a {
     text-decoration: none;
 }
 
+h2 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 36px;
+    font-weight: 500;
+}
+
+button {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    &:hover,
+    &:focus {
+        background-color: #F082AC;
+    }
+
+    &.loginButton,
+    &.logoutButton,
+    &.registerButton {
+        margin: 0 20px;
+        display: none;
+
+        &.open {
+            display: block;
+        }
+    }
+
+}
+
 // .section {
 //     position: relative;
 //     z-index: 1;
