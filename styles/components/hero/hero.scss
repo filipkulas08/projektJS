@@ -1,0 +1,61 @@
+.hero {
+    background-color: $midnight;
+    margin-top: 90px;
+
+    .text-media {
+        @include for-up-to-desktop {
+            align-items: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: auto;
+            max-width: 99%;
+            position: relative;
+            text-align: center;
+
+        }
+
+        color: #fff;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        max-width: 1144px;
+        position: relative;
+
+        div:first-of-type {
+            @include for-up-to-desktop {
+                width: 100%;
+            }
+
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .article {
+                @include for-up-to-desktop {
+                    margin: auto;
+                    max-width: 90%;
+                    padding-left: unset;
+                    padding-top: 55px;
+                    width: auto;
+
+                }
+
+                max-width: 500px;
+            }
+        }
+
+        img {
+            @include for-up-to-desktop {
+                display: block;
+                margin: auto;
+                max-width: 90%;
+            }
+
+            max-height: 450px;
+        }
+    }
+}

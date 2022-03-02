@@ -32,6 +32,12 @@ const login = () => {
             $errorMessage.text(message);
         });
 
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              localStorage.setItem('userID', user.uid)
+            }
+          });
+
         $('input').val('');
     });
 

@@ -77,6 +77,16 @@
             &.menu-item-level-1 {
                 display: flex;
                 flex-direction: column;
+
+                .loginButton,
+                .registerButton,
+                .logoutButton {
+                    display: none;
+                    
+                    &.open {
+                        display: block;
+                    }
+                }
             }
 
             a {

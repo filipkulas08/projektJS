@@ -4,8 +4,22 @@
     }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cabin', sans-serif;
+}
+
 a {
     text-decoration: none;
+}
+
+h1 {
+    font-size: 54px;
+    line-height: 64px;
+    font-weight: 700;
 }
 
 h2 {
@@ -64,13 +78,26 @@ button {
         display: none;
 
         &.open {
+            @include for-up-to-desktop {
+                display: none;
+            }
+            
             display: block;
         }
     }
 
 }
 
-// .section {
-//     position: relative;
-//     z-index: 1;
-// }
+#timepicker {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
+section {
+  @include for-desktop-up {
+    width: $section-width;
+    margin: 0 auto;
+  }
+}

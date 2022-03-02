@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script defer type="module" src="/projektJS/scripts/index.js"></script>
     <link rel="stylesheet" href="/projektJS/styles/index.css">
     <title>Ćwiczenie 1</title>
@@ -19,7 +20,7 @@
                 <div class="navigation main-nav section">
                     <ul class="menu-wrapper simple horizontal">
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1">
+                            <a href="#our-services" class="navigation-link menu-link-level-1">
                                 <span>
                                     Dupa
                                 </span>
@@ -70,6 +71,24 @@
                                 </span>
                             </a>
                         </li>
+
+                        <li class="menu-item-level-1">
+                            <a href="#" class="navigation-link menu-link-level-1 loginButton open">
+                                <span>Login</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item-level-1">
+                            <a href="#" class="navigation-link menu-link-level-1 registerButton open">
+                                <span>Register</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item-level-1">
+                            <a href="#" class="navigation-link menu-link-level-1 logoutButton">
+                                <span>Logout</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="register-button">
@@ -105,73 +124,224 @@
             </section>
         </div>
     </header>
-    <div class="modal-window modal-popup login">
-        <div class="wrapper">
-            <div class="modal-content">
-                <div class="columnLayoutBlock">
-                    <div class="columns">
-                        <div class="col col-large-5-of-12 col-medium-5-of-12 col-small-12-of-12">
-                            <div class="login">
-                                <div>
-                                    <div class="icon">
-                                        <img src="/projektJS/icons/close.png" alt="">
+    <main>
+        <div class="modal-window modal-popup login">
+            <div class="wrapper">
+                <div class="modal-content">
+                    <div class="columnLayoutBlock">
+                        <div class="columns">
+                            <div class="col col-large-5-of-12 col-medium-5-of-12 col-small-12-of-12">
+                                <div class="login">
+                                    <div>
+                                        <div class="icon">
+                                            <img src="/projektJS/icons/close.png" alt="">
+                                        </div>
+                                        <h2>Welcome back</h2>
+                                        <h3>Login</h3>
+                                        <div class="form">
+                                            <input class="emailInput" type="email" placeholder="Type your email"
+                                                id="emailLogin">
+                                            <input class="passwordInput" type="password"
+                                                placeholder="Type your password" id="passwordLogin">
+                                            <p class="errorMessage"></p>
+                                        </div>
+                                        <button id="loginBtn">Login</button>
+                                        <button class="googleButton" id="login">Google</button>
                                     </div>
-                                    <h2>Welcome back</h2>
-                                    <h3>Login</h3>
-                                    <div class="form">
-                                        <input class="emailInput" type="email" placeholder="Type your email" id="emailLogin">
-                                        <input class="passwordInput" type="password" placeholder="Type your password" id="passwordLogin"> 
-                                        <p class="errorMessage"></p>
-                                    </div>
-                                    <button id="loginBtn">Login</button>
-                                    <button class="googleButton" id="login">Google</button>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col col-large-7-of-12 col-medium-7-of-12 col-small-12-of-12">
-                            <div class ="image-div">
-                                <img src="/projektJS/images/publicdomainq-dentist.svg" alt="">
+                            <div class="col col-large-7-of-12 col-medium-7-of-12 col-small-12-of-12">
+                                <div class="image-div">
+                                    <img src="/projektJS/images/publicdomainq-dentist.svg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal-window modal-popup register">
-        <div class="wrapper">
-            <div class="modal-content">
-                <div class="columnLayoutBlock">
-                    <div class="columns">
-                        <div class="col col-large-6-of-12 col-medium-6-of-12 col-small-12-of-12">
-                            <div class="login">
-                                <div>
-                                    <div class="icon">
-                                        <img src="/projektJS/icons/close.png" alt="">
+        <div class="modal-window modal-popup register">
+            <div class="wrapper">
+                <div class="modal-content">
+                    <div class="columnLayoutBlock">
+                        <div class="columns">
+                            <div class="col col-large-6-of-12 col-medium-6-of-12 col-small-12-of-12">
+                                <div class="login">
+                                    <div>
+                                        <div class="icon">
+                                            <img src="/projektJS/icons/close.png" alt="">
+                                        </div>
+                                        <h2>Welcome</h2>
+                                        <h3>Create account</h3>
+                                        <div class="form">
+                                            <input class="emailInput" type="email" placeholder="Type your email"
+                                                id="emailRegister">
+                                            <input class="passwordInput" type="password"
+                                                placeholder="Type your password" id="passwordRegister">
+                                            <p class="errorMessage"></p>
+                                        </div>
+                                        <button id="signUp">Sign up</button>
                                     </div>
-                                    <h2>Welcome</h2>
-                                    <h3>Create account</h3>
-                                    <div class="form">
-                                        <input class="emailInput" type="email" placeholder="Type your email" id="emailRegister">
-                                        <input class="passwordInput" type="password" placeholder="Type your password" id="passwordRegister">
-                                        <p class="errorMessage"></p>
-                                    </div>
-                                    <button id="signUp">Sign up</button>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col col-large-6-of-12 col-medium-6-of-12 col-small-12-of-12">
-                            <div class ="image-div">
-                                <img src="/projektJS/images/publicdomainq-dentist.svg" alt="">
+                            <div class="col col-large-6-of-12 col-medium-6-of-12 col-small-12-of-12">
+                                <div class="image-div">
+                                    <img src="/projektJS/images/publicdomainq-dentist.svg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="columnLayoutBlock hero">
+            <div class="columns">
+                <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
+                    <div class="textAndMedia">
+                        <div class="text-media">
+                            <div>
+                                <div class="article">
+                                    <h1>Dentistry</h1>
+                                    <p>A dentist at work in his vocation always looks down in the mouth</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="image">
+                                    <img src="/projektJS/images/hero-dentist.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="booking" class="booking">
+            <div class="columnLayoutBlock">
+                <div class="columns">
+                    <div class="col col-large-6-of-12 col-medium-12-of-12 col-small-12-of-12">
+                        <input id="datepicker" type="text">
+                        <input type="text" id="timepicker">
+                        <button id="test">test
+                        </button>
+                    </div>
+                    <div class="col col-large-6-of-12 col-medium-12-of-12 col-small-12-of-12">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="our-services" class="our-services">
+            <div class="columnLayoutBlock">
+                <div class="columns">
+                    <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
+
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayoutBlock">
+                <div class="columns container">
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/orthodontic.png" alt="orthodontic">
+                                <h4>Orthodontic</h4>
+                                <p>Treatment of malocclusion and maxillofacial defects. Treatment of dysfunction of the
+                                    masticatory organ.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/prosthetic.png" alt="prosthetic">
+                                <h4>Prosthetic</h4>
+                                <p>Reconstruction and restoration of the dentition. Significant improvement in chewing,
+                                    speech and facial aesthetics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/implant.png" alt="implant">
+                                <h4>Implant</h4>
+                                <p>Restoring lost dentition. Implants perfectly imitate natural teeth, fulfilling their
+                                    functions in every detail. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayoutBlock">
+                <div class="columns container">
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/root-canal.png" alt="root-canal">
+                                <h4>Root canal treatment </h4>
+                                <p>Treatment of the chamber and root canals of the tooth. Removal of infected tissue as
+                                    well as bacteria from the center of the canals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/dental-drill.png" alt="caries-treatment">
+                                <h4>Caries treatment</h4>
+                                <p>Dental health check. Cavity treatment. Caries prevention and treatment. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/baby-teeth.png" alt="children's-dentistry">
+                                <h4>Children's dentistry</h4>
+                                <p>Learning proper oral hygiene. Stress-free treatment in a pleasant atmosphere. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayoutBlock">
+                <div class="columns container">
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/dental-surgery.png" alt="dental-surgery">
+                                <h4>Dental surgery</h4>
+                                <p>Oral treatment and surgery. Extraction of impacted teeth, wisdom teeth and others</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/healthy-tooth.png" alt="teeth-whitening">
+                                <h4>Teeth whitening</h4>
+                                <p>Restoring the natural color of the teeth so that they look like they used to be.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                        <div class="box">
+                            <div class="content">
+                                <img src="/projektJS/icons/scaling.png" alt="scaling">
+                                <h4>Scaling</h4>
+                                <p>Removal of tartar. It protects our teeth and oral cavity against the growth of
+                                    bacteria.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
+<script src="/projektJS/scripts/jquery.datetimepicker.full.min.js"></script>
 
 </html>

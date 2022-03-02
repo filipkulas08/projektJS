@@ -9,7 +9,10 @@ const initFirebase = () => {
         measurementId: "G-2RMC15RRQR"
       };
 
-      firebase.initializeApp(firebaseConfig);
+      var app = firebase.initializeApp(firebaseConfig);
+      app;
+      var db = firebase.firestore(app);
+
 }
 
 export default initFirebase;

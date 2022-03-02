@@ -1,0 +1,7 @@
+.booking {
+    display: none;
+
+    &.visible {
+        display: block;
+    }
+}
