@@ -10,7 +10,7 @@
     <script src="/projektJS/scripts/jquery.min.js"></script>
     <script defer type="module" src="/projektJS/scripts/index.min.js"></script>
     <link rel="stylesheet" href="/projektJS/styles/index.min.css">
-    <title>Ćwiczenie 1</title>
+    <title>Dental Clinic</title>
     <link rel="icon" type="image/x-icon" href="/projektJS/icons/logo.svg">
 </head>
 
@@ -21,7 +21,15 @@
                 <div class="navigation main-nav section">
                     <ul class="menu-wrapper simple horizontal">
                         <li class="menu-item-level-1">
-                            <a href="#our-services" class="navigation-link menu-link-level-1">
+                            <a href="#introduction" aria-label="Introduction" class="navigation-link menu-link-level-1">
+                                <span>
+                                    Introduction
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item-level-1">
+                            <a href="#our-services" aria-label="Our-services" class="navigation-link menu-link-level-1">
                                 <span>
                                     Our services
                                 </span>
@@ -29,17 +37,17 @@
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#booking" class="navigation-link menu-link-level-1">
+                            <a href="#office" aria-label="Our-office" class="navigation-link menu-link-level-1">
                                 <span>
-                                    Booking
+                                    Our office
                                 </span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#introduction" class="navigation-link menu-link-level-1">
+                            <a href="#booking" aria-label="Booking" class="navigation-link menu-link-level-1">
                                 <span>
-                                    introduction
+                                    Book a visit
                                 </span>
                             </a>
                         </li>
@@ -50,43 +58,51 @@
                     </div>
                     <ul class="menu-wrapper simple horizontal desktop-hidden">
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1">
+                            <a href="#introduction" aria-label="Introduction" class="navigation-link menu-link-level-1">
                                 <span>
-                                    Dupa
+                                    Introduction
                                 </span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1">
+                            <a href="#our-services" aria-label="Our-services" class="navigation-link menu-link-level-1">
                                 <span>
-                                    Dupa
+                                    Our services
                                 </span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1">
+                            <a href="#office" aria-label="Our-office" class="navigation-link menu-link-level-1">
                                 <span>
-                                    Dupa
+                                    Our office
                                 </span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1 loginButton open">
+                            <a href="#booking" aria-label="Booking" class="navigation-link menu-link-level-1">
+                                <span>
+                                    Book a visit
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item-level-1">
+                            <a aria-label="Login" class="navigation-link menu-link-level-1 loginButton open">
                                 <span>Login</span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1 registerButton open">
+                            <a aria-label="Register" class="navigation-link menu-link-level-1 registerButton open">
                                 <span>Register</span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1 logoutButton">
+                            <a aria-label="Logout" class="navigation-link menu-link-level-1 logoutButton">
                                 <span>Logout</span>
                             </a>
                         </li>
@@ -116,7 +132,7 @@
                 <div class="textAndMedia logo section">
                     <div class="text-media">
                         <div>
-                            <a href="#" class="text-media-img-link">
+                            <a aria-label="logo" href="#" class="text-media-img-link">
                                 <img src="/projektJS/icons/logo.svg" alt="" class="text-media-img">
                             </a>
                         </div>
@@ -126,7 +142,7 @@
         </div>
     </header>
     <main>
-        <a href="#" class="backToTopButton" id="backToTop">Back to top</a>
+        <a href="#" aria-label="Back to top" class="backToTopButton" id="backToTop">Back to top</a>
         <div class="modal-window modal-popup login">
             <div class="wrapper">
                 <div class="modal-content">
@@ -225,79 +241,11 @@
                     <div class="columns">
                         <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
                             <h2>Step into the tooth world</h2>
-                            <h4>You’re never fully dressed without a smile.</h4>
+                            <h3>You’re never fully dressed without a smile.</h3>
                             <video controls>
                                 <source src="/projektJS/videos/pexels-pavel-danilyuk-6192970.mp4" type="video/mp4">
                                 Your browser does not support HTML video.
                             </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="office" class="office">
-            <div class="section-body">
-                <div class="columnLayoutBlock">
-                    <div class="columns">
-                        <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
-                            <h1>Get to know our office</h1>
-                            <div id="slider">
-                                <ul>
-                                    <li>
-                                        <img src="/projektJS/images/slider1.webp" loading="lazy" alt="dental-office">
-                                    </li>
-                                    <li>
-                                        <img src="/projektJS/images/slider2.webp" loading="lazy" alt="dental-office">
-                                    </li>
-                                    <li>
-                                        <img src="/projektJS/images/slider3.webp" loading="lazy" alt="dental-office">
-                                    </li>
-                                    <li>
-                                        <img src="/projektJS/images/slider4.webp" loading="lazy" alt="dental-office">
-                                    </li>
-                                    <li>
-                                        <img src="/projektJS/images/slider5.webp" loading="lazy" alt="dental-office">
-                                    </li>
-                                    <li>
-                                        <img src="/projektJS/images/slider6.webp" loading="lazy" alt="dental-office">
-                                    </li>
-                                    <li>
-                                        <img src="/projektJS/images/slider7.webp" loading="lazy" alt="dental-office">
-                                    </li>
-                            </div>
-                            <div class="button next"></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
-        <section id="booking" class="booking">
-            <div class="section-body">
-                <div class="columnLayoutBlock">
-                    <div class="columns">
-                        <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
-                            <div class="booking-form">
-                                <label for="date">Click below to choose your date</label>
-                                <input type="text" id="datepicker">
-                                <label for="hour" class="timepicker">Click below to choose your hour:</label>
-                                <input type="text" class="timepicker" id="timepicker">
-                                <button id="test">Submit
-                                </button>
-                            </div>
-                            <div class="nextVisit">
-                                <h3>Your visit will take place in </h3>
-                                <div class="countdown">
-                                    <div class="tiles" id="tiles"></div>
-                                    <div class="labels">
-                                        <li>Days</li>
-                                        <li>Hours</li>
-                                        <li>Mins</li>
-                                        <li>Secs</li>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -421,6 +369,102 @@
                 </div>
             </div>
         </section>
+        <section id="office" class="office">
+            <div class="section-body">
+                <div class="columnLayoutBlock">
+                    <div class="columns">
+                        <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
+                            <h1>
+                                Get to know our office
+                            </h1>
+                            <h2>
+                                We have a modern, one of the best equipped offices in Poland, ready to receive patients.
+                            </h2>
+                            <div class="slider" id="slider">
+                                <ul>
+                                    <li>
+                                        <img src="/projektJS/images/slider1.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider2.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider3.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider4.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider5.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider6.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider7.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                            </div>
+                            <div class="button next"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="booking" class="booking">
+            <div class="section-body">
+                <div class="columnLayoutBlock">
+                    <div class="columns">
+                        <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
+                            <div class="booking-form">
+                                <h3>Visit booking form</h3>
+                                <label for="firstName">
+                                    <span>First name</span>
+                                    <input type="text" id="firstName">
+                                </label>
+                                <label for="lastName">
+                                    <span>Last name</span>
+                                    <input type="text" id="lastName">
+                                </label>
+                                <label for="email">
+                                    <span>E-mail address</span>
+                                    <input type="email" id="email">
+                                </label>
+                                <label for="number">
+                                    <span>Phone number</span>
+                                    <input type="text" id="number">
+                                </label>
+                                <label for="datepicker">
+                                    <span>Select date</span>
+                                    <input type="text" id="datepicker">
+                                </label>
+                                <label for="timepicker" class="timepicker">
+                                    <span>Select time</span>
+                                    <input type="text" class="timepicker" id="timepicker">
+                                </label>
+                                <button id="submit">Submit
+                                </button>
+                            </div>
+                            <div class="nextVisit">
+                                <h3>Your next visit will take place in </h3>
+                                <div class="countdown">
+                                    <div class="tiles" id="tiles"></div>
+                                    <div class="labels">
+                                        <ul>
+                                            <li>Days</li>
+                                            <li>Hours</li>
+                                            <li>Mins</li>
+                                            <li>Secs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer ">
         <div class="columnLayoutBlock section basic-columns">
@@ -429,8 +473,9 @@
                     <div class="textAndMedia section  footer-logos">
                         <div class="text-media">
                             <div>
-                                <a class="text-media-img-link" href="https://futureofvision.global/home.html">
-                                    <img src="/projektJS/icons/logo.svg">
+                                <a aria-label="logo2" class="text-media-img-link"
+                                    href="https://futureofvision.global/home.html">
+                                    <img src="/projektJS/icons/logo.svg" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -440,22 +485,14 @@
                             data-content-featured="false">
                             <div>
                                 <div class="text-media-article">
-                                    <p><a href="https://www.roche.com/about.htm" target="_blank">&gt; About Us</a>&nbsp;
-                                        <a href="https://www.roche.com/contact.htm" target="_blank">&gt; Contact
-                                            Us&nbsp;</a>&nbsp;&nbsp;<a href="https://www.roche.com/legal_statement.htm"
-                                            target="_blank">&gt; Legal Statement&nbsp;</a>&nbsp;<a
-                                            href="https://www.roche.com/privacy_policy.htm" target="_blank">&gt; Privacy
-                                            Statement</a>&nbsp;<a href="#" class="ot-sdk-show-settings"
-                                            target="_blank">Preferencje dotyczące plików cookie</a>&nbsp;<a
-                                            href="https://medinfo.roche.com/" target="_blank">&gt; MedInfo</a></p>
-                                    <p>© 2021 F. Hoffmann-La Roche Ltd&nbsp;M-XX-00007885 DATE OF
-                                        PREPARATION:&nbsp;January 2022<br>
+                                    <p>© 2022 Dental Clinic&nbsp; DATE OF
+                                        PREPARATION:&nbsp;March 2022<br>
                                     </p>
-                                    <p>This website is a global information resource for a public audience, outside of
-                                        the United States of America and United Kingdom. This website is produced by
-                                        Roche and is not intended to provide medical advice and/or treatment guidance.
-                                        The content on this website is non-promotional and does not make specific
-                                        reference to the availability or the use of a medicine.<br>
+                                    <p>At Dental Clinic, accessible from Dental Clinic.com, one of our main priorities
+                                        is the privacy of our visitors. This Privacy Policy document contains types of
+                                        information that is collected and recorded by Dental Clinic and how we use it.
+                                        If you have additional questions or require more information about our Privacy
+                                        Policy, do not hesitate to contact us.<br>
                                     </p>
                                 </div>
                             </div>
@@ -463,14 +500,15 @@
                                 <div class="text-media-description">
                                     <p>Find Us</p>
                                     <ul>
-                                        <li><a href="https://www.linkedin.com"
-                                                target="_blank" class="linkedin">LinkedIn</a>&nbsp;</li>
-                                        <li><a href="https://www.facebook.com" target="_blank"
+                                        <li><a aria-label="Linkedin" href="https://www.linkedin.com" target="_blank"
+                                                class="linkedin">LinkedIn</a>&nbsp;</li>
+                                        <li><a aria-label="Facebook" href="https://www.facebook.com" target="_blank"
                                                 class="facebook">Facebook</a>&nbsp;</li>
-                                        <li><a href="https://www.instagram.com" target="_blank"
+                                        <li><a aria-label="Instagram" href="https://www.instagram.com" target="_blank"
                                                 class="instagram">Instagram</a>&nbsp;</li>
-                                        <li><a href="https://twitter.com" target="_blank"
-                                                class="twitter">Twitter</a></li>
+                                        <li><a aria-label="Twitter" href="https://twitter.com" target="_blank"
+                                                class="twitter">Twitter</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

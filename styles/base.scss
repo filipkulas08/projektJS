@@ -19,26 +19,26 @@ a {
 
 h1 {
     font-size: 54px;
-    line-height: 64px;
     font-weight: 700;
+    line-height: 64px;
 }
 
 h2 {
     font-size: 48px;
-    line-height: 60px;
     font-weight: 700;
+    line-height: 60px;
 }
 
 h3 {
     font-size: 36px;
-    line-height: 48px;
     font-weight: 700;
+    line-height: 48px;
 }
 
 h4 {
     font-size: 22px;
-    line-height: 36px;
     font-weight: 500;
+    line-height: 36px;
 }
 
 button {
@@ -61,22 +61,22 @@ button {
     position: relative;
     text-align: center;
     text-decoration: none;
+    touch-action: manipulation;
     transition: color 100ms;
-    vertical-align: baseline;
     user-select: none;
     -webkit-user-select: none;
-    touch-action: manipulation;
+    vertical-align: baseline;
 
     &:hover,
     &:focus {
-        background-color: #F082AC;
+        background-color: $mauvelous;
     }
 
     &.loginButton,
     &.logoutButton,
     &.registerButton {
-        margin: 0 20px;
         display: none;
+        margin: 0 20px;
 
         &.open {
             @include for-up-to-desktop {
@@ -91,17 +91,19 @@ button {
 
 section {
     scroll-margin-top: 90px;
-}
 
-.section-body {
-    @include for-desktop-up {
-        width: $section-width;
-        margin: 0 auto;
-        padding: 60px 0;
+    .section-body {
+        @include for-desktop-up {
+            margin: 0 auto;
+            padding: 60px 0;
+            width: $section-width;
+        }
+
+        padding: 40px 0;
     }
-
-    padding: 40px 0;
 }
+
+
 
 .backToTopButton {
     @include for-desktop-up {
@@ -113,15 +115,15 @@ section {
         padding: 16px 24px 16px 20px;
     }
 
-    background-color: #002447;
+    background-color: $prussian-blue;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 34px;
     border-top-left-radius: 0;
     border-top-right-radius: 34px;
     bottom: 75px;
-    box-shadow: 4px 5px 7px 0 rgb(30, 37, 43 / 25%);
+    box-shadow: 4px 5px 7px 0 rgb($shark / 25%);
     box-sizing: border-box;
-    color: #fff;
+    color: $white;
     left: 0;
     max-width: 68px;
     overflow: hidden;
@@ -132,9 +134,9 @@ section {
 
     &::before {
         @include for-desktop-up {
+            background-position: 25%;
             background-size: 50%;
             padding-right: 40px;
-            background-position: 25%;
         }
 
         background-image: url(/projektJS/icons/up-arrow.png);
@@ -142,12 +144,12 @@ section {
         background-repeat: no-repeat;
         background-size: 35%;
         content: "";
-        padding-right: 48px;
         filter: invert(1);
+        padding-right: 48px;
     }
 
     &:hover {
-        background-color: #02315e;
+        background-color: $astronaut-blue;
         opacity: 1;
     }
 }

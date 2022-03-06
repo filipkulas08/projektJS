@@ -1,16 +1,15 @@
 .booking {
     display: none;
-    background-color: $concrete;
 
     &.visible {
         display: block;
     }
 
     .col {
-        position: relative;
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
 
         .booking-form {
             display: flex;
@@ -24,18 +23,37 @@
             label {
                 margin-bottom: 20px;
             }
-            .timepicker {
-                display: none;
-            
-                &.show {
+
+            label {
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    margin-right: 30px;
+                }
+
+                &.radio-inline {
                     display: block;
                 }
+            }
+
+            .timepicker {
+                display: none;
+
+                &.show {
+                    display: flex;
+                }
+            }
+
+            h3 {
+                margin-bottom: 30px;
             }
         }
 
         .nextVisit {
             display: none;
             text-align: center;
+
             &.visible {
                 display: block;
             }

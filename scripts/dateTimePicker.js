@@ -49,7 +49,7 @@ const dateTimePicker = (db) => {
     })
 
 
-    $('#test').on('click', () => {
+    $('#submit').on('click', () => {
         var $Fulldate = $('#datepicker').datetimepicker('getValue');
         var $FullHour = $('#timepicker').datetimepicker('getValue');
         var $year = $Fulldate.getFullYear();
@@ -58,12 +58,20 @@ const dateTimePicker = (db) => {
         var $date = $month + '/' + $day + '/' + $year;
         var $hour = $FullHour.getHours() + ':00';
         var $dateNumber = new Date($date + ' ' + $hour).getTime();
+        const $firstName = $('#firstName').val();
+        const $lasttName = $('#lastName').val();
+        const $email = $('#email').val();
+        const $number = $('#number').val();
 
         db.collection("Visits").add({
                 date: $date,
                 hour: $hour,
                 userId: userId,
-                dateNumber: $dateNumber
+                dateNumber: $dateNumber,
+                firstName: $firstName,
+                lastName:$lasttName,
+                email:$email,
+                phoneNumber:$number,
 
             })
             .then((docRef) => {

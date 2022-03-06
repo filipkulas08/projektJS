@@ -20,8 +20,8 @@
 
         .logo img {
             @include for-up-to-desktop {
-                min-height: 40px;
                 margin-left: 80px;
+                min-height: 40px;
             }
 
             width: 90px;

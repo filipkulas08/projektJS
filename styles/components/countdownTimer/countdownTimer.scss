@@ -1,125 +1,128 @@
-.countdown{
-	max-width: 465px;
-	height: 112px;
-	text-align: center;
-	background: #222;
-	background-image: -webkit-linear-gradient(top, #222, #333, #333, #222); 
-	background-image:    -moz-linear-gradient(top, #222, #333, #333, #222);
-	background-image:     -ms-linear-gradient(top, #222, #333, #333, #222);
-	background-image:      -o-linear-gradient(top, #222, #333, #333, #222);
-	border: 1px solid #111;
+.countdown {
+	background: $mine-shaft;
+	background-image: -webkit-linear-gradient(top, $mine-shaft, $mine-shaft2, $mine-shaft2, $mine-shaft);
+	background-image: -moz-linear-gradient(top, $mine-shaft, $mine-shaft2, $mine-shaft2, $mine-shaft);
+	background-image: -ms-linear-gradient(top, $mine-shaft, $mine-shaft2, $mine-shaft2, $mine-shaft);
+	background-image: -o-linear-gradient(top, $mine-shaft, $mine-shaft2, $mine-shaft2, $mine-shaft);
+	border: 1px solid $cod-gray;
 	border-radius: 5px;
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 0px 8px rgba($black, 0.6);
+	height: 112px;
 	margin: auto;
+	max-width: 465px;
 	padding: 24px 0;
 	position: relative;
-}
-
-.countdown:before{
-	content:"";
-	width: 8px;
-	height: 65px;
-	background: #444;
-	background-image: -webkit-linear-gradient(top, #555, #444, #444, #555); 
-	background-image:    -moz-linear-gradient(top, #555, #444, #444, #555);
-	background-image:     -ms-linear-gradient(top, #555, #444, #444, #555);
-	background-image:      -o-linear-gradient(top, #555, #444, #444, #555);
-	border: 1px solid #111;
-	border-top-left-radius: 6px;
-	border-bottom-left-radius: 6px;
-	display: block;
-	position: absolute;
-	top: 48px; left: -10px;
-}
-
-.countdown:after{
-	content:"";
-	width: 8px;
-	height: 65px;
-	background: #444;
-	background-image: -webkit-linear-gradient(top, #555, #444, #444, #555); 
-	background-image:    -moz-linear-gradient(top, #555, #444, #444, #555);
-	background-image:     -ms-linear-gradient(top, #555, #444, #444, #555);
-	background-image:      -o-linear-gradient(top, #555, #444, #444, #555);
-	border: 1px solid #111;
-	border-top-right-radius: 6px;
-	border-bottom-right-radius: 6px;
-	display: block;
-	position: absolute;
-	top: 48px; right: -10px;
-}
-
-.countdown .tiles{
-	position: relative;
-	z-index: 1;
-}
-
-.countdown .tiles > span {
-    @include for-up-to-desktop {
-        width: 70px;
-        // font-size: 36px;
-    }
-
-	width: 92px;
-	max-width: 92px;
-	font-size: 48px;
 	text-align: center;
-	color: #111;
-	background-color: #ddd;
-	background-image: -webkit-linear-gradient(top, #bbb, #eee); 
-	background-image:    -moz-linear-gradient(top, #bbb, #eee);
-	background-image:     -ms-linear-gradient(top, #bbb, #eee);
-	background-image:      -o-linear-gradient(top, #bbb, #eee);
-	border-top: 1px solid #fff;
-	border-radius: 3px;
-	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
-	margin: 0 7px;
-	padding: 18px 0;
-	display: inline-block;
-	position: relative;
-}
 
-.countdown .tiles > span:before{
-	content:"";
-	width: 100%;
-	height: 13px;
-	background: #111;
-	display: block;
-	padding: 0 3px;
-	position: absolute;
-	top: 41%; left: -3px;
-	z-index: -1;
-}
+	&:before {
+		background: $tundora;
+		background-image: -webkit-linear-gradient(top, $emperor, $tundora, $tundora, $emperor);
+		background-image: -moz-linear-gradient(top, $emperor, $tundora, $tundora, $emperor);
+		background-image: -ms-linear-gradient(top, $emperor, $tundora, $tundora, $emperor);
+		background-image: -o-linear-gradient(top, $emperor, $tundora, $tundora, $emperor);
+		border: 1px solid $cod-gray;
+		border-bottom-left-radius: 6px;
+		border-top-left-radius: 6px;
+		content: "";
+		display: block;
+		height: 65px;
+		left: -10px;
+		position: absolute;
+		top: 48px;
+		width: 8px;
+	}
 
-.countdown .tiles > span:after{
-	content:"";
-	width: 100%;
-	height: 1px;
-	background: #eee;
-	border-top: 1px solid #333;
-	display: block;
-	position: absolute;
-	top: 48%; left: 0;
-}
+	&::after {
+		background: $tundora;
+		background-image: -webkit-linear-gradient(top, $emperor, $tundora, $tundora, $emperor);
+		background-image: -moz-linear-gradient(top, $emperor, $tundora, $tundora, $emperor);
+		background-image: -ms-linear-gradient(top, $emperor, $tundora, $tundora, $emperor);
+		background-image: -o-linear-gradient(top, $emperor, $tundora, $tundora, $emperor);
+		border: 1px solid $cod-gray;
+		border-bottom-right-radius: 6px;
+		border-top-right-radius: 6px;
+		content: "";
+		display: block;
+		height: 65px;
+		position: absolute;
+		right: -10px;
+		top: 48px;
+		width: 8px;
+	}
 
-.countdown .labels{
-	width: 100%;
-	height: 25px;
-	text-align: center;
-	position: absolute;
-	bottom: 8px;
-}
+	.tiles {
+		position: relative;
+		z-index: 1;
 
-.countdown .labels li{
-    @include for-up-to-desktop {
-        width: 80px;
-    }
+		> span {
+			@include for-up-to-desktop {
+				width: 70px;
+			}
 
-	width: 102px;
-	font-size: 15px;
-	color: #f47321;
-	text-shadow: 1px 1px 0px #000;
-	text-align: center;
-	text-transform: uppercase;
-	display: inline-block;
+			background-color: #ddd;
+			background-image: -webkit-linear-gradient(top, $silver, $gallery);
+			background-image: -moz-linear-gradient(top, $silver, $gallery);
+			background-image: -ms-linear-gradient(top, $silver, $gallery);
+			background-image: -o-linear-gradient(top, $silver, $gallery);
+			border-radius: 3px;
+			border-top: 1px solid $white;
+			box-shadow: 0px 0px 12px rgba($black, 0.7);
+			color: $cod-gray;
+			display: inline-block;
+			font-size: 48px;
+			margin: 0 7px;
+			max-width: 92px;
+			padding: 18px 0;
+			position: relative;
+			text-align: center;
+			width: 92px;
+
+			&::before {
+				background: $cod-gray;
+				content: "";
+				display: block;
+				height: 13px;
+				left: -3px;
+				padding: 0 3px;
+				position: absolute;
+				top: 41%;
+				width: 100%;
+				z-index: -1;
+			}
+
+			&::after {
+				background: $gallery;
+				border-top: 1px solid $mine-shaft2;
+				content: "";
+				display: block;
+				height: 1px;
+				left: 0;
+				position: absolute;
+				top: 48%;
+				width: 100%;
+			}
+		}
+	}
+
+	.labels {
+		bottom: 8px;
+		height: 25px;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+
+		li {
+			@include for-up-to-desktop {
+				width: 80px;
+			}
+
+			color: $tango;
+			display: inline-block;
+			font-size: 15px;
+			text-align: center;
+			text-shadow: 1px 1px 0px $black;
+			text-transform: uppercase;
+			width: 102px;
+		}
+	}
 }
