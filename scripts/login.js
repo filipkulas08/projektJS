@@ -30,6 +30,7 @@ const login = () => {
             console.log(message);
             $errorMessage.addClass('exist');
             $errorMessage.text(message);
+            $('input').val('');
         });
 
         firebase.auth().onAuthStateChanged((user) => {
@@ -37,8 +38,6 @@ const login = () => {
               localStorage.setItem('userID', user.uid)
             }
           });
-
-        $('input').val('');
     });
 
     $logoutButton.on('click', () => {

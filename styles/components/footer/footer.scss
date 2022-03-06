@@ -1,0 +1,111 @@
+footer {
+    background-color: #f2f2f2;
+    bottom: 0;
+    font-size: 16px;
+    width: 100%;
+
+    .columnLayoutBlock {
+        @include for-up-to-desktop {
+            padding: 20px;
+        }
+
+        margin: auto;
+        max-width: $section-width;
+        padding: 50px;
+
+        .footer-logos .text-media {
+            @include for-up-to-desktop {
+                padding: 0;
+            }
+
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1440px;
+            padding: 0 50px;
+
+            img {
+                max-width: 90px;
+            }
+        }
+
+        .references {
+            @include for-up-to-desktop {
+                padding: 0;
+            }
+
+            color: #8a8a8a;
+            margin: auto;
+            max-width: 1440px;
+            padding: 0 50px;
+        }
+
+        .footer-copywrite .text-media {
+            @include for-up-to-desktop {
+                padding: 40px 0 8px;
+                flex-direction: column;
+            }
+
+            display: flex;
+
+            div:first-child {
+                @include for-up-to-desktop {
+                    padding: 0;
+                }
+                
+                max-width: 990px;
+                padding-right: 30px;
+
+                p {
+                    margin-bottom: 30px;
+
+                    a {
+                        margin-right: 15px;
+                    }
+                }
+            }
+
+            div:last-child {
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    font-size: 0;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        list-style: none;
+                        position: relative;
+
+                        a {
+                            margin-right: 15px;
+                            background-position: 50%;
+                            background-size: 32px;
+                            display: block;
+                            height: 32px;
+                            margin-right: 10px;
+                            width: 32px;
+
+                            &.linkedin {
+                                background-image: url(/projektJS/icons/linkedin.png);
+                            }
+
+                            &.facebook {
+                                background-image: url(/projektJS/icons/facebook.png);
+                            }
+
+                            &.instagram {
+                                background-image: url(/projektJS/icons/instagram.png);
+                            }
+
+                            &.twitter {
+                                background-image: url(/projektJS/icons/twitter.png);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

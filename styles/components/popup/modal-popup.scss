@@ -80,11 +80,11 @@
                                 margin-bottom: 20px;
 
                                 &.emailInput {
-                                    background-image: url(/projektJS/icons/email.png);
+                                    background-image: url(/projektJS/icons/email.svg);
                                 }
 
                                 &.passwordInput {
-                                    background-image: url(/projektJS/icons/lock.png);
+                                    background-image: url(/projektJS/icons/lock.svg);
                                 }
 
                                 &:valid {
@@ -111,8 +111,7 @@
                                 }
 
                                 &:-webkit-autofill {
-                                    box-shadow: 0 0 0px 1000px $midnight inset;
-                                    -webkit-text-fill-color: white !important;
+                                    box-shadow: 0 0 0px 1000px $white inset;
                                 }
 
                                 &::placeholder {
@@ -137,7 +136,7 @@
                             width: 150px;
 
                             &.googleButton {
-                                background-image: url(/projektJS/icons/google.png);
+                                background-image: url(/projektJS/icons/google.svg);
                                 background-size: 16px;
                                 background-position: 20%;
                                 background-repeat: no-repeat;

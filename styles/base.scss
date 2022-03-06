@@ -5,7 +5,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
 }
 
 body {
@@ -81,23 +82,72 @@ button {
             @include for-up-to-desktop {
                 display: none;
             }
-            
+
             display: block;
         }
     }
 
 }
 
-#timepicker {
-    display: none;
-
-    &.show {
-        display: block;
-    }
-}
 section {
-  @include for-desktop-up {
-    width: $section-width;
-    margin: 0 auto;
-  }
+    scroll-margin-top: 90px;
+}
+
+.section-body {
+    @include for-desktop-up {
+        width: $section-width;
+        margin: 0 auto;
+        padding: 60px 0;
+    }
+
+    padding: 40px 0;
+}
+
+.backToTopButton {
+    @include for-desktop-up {
+        bottom: 100px;
+        font-size: 18px;
+        letter-spacing: -.18px;
+        line-height: 1.55;
+        max-width: 204px;
+        padding: 16px 24px 16px 20px;
+    }
+
+    background-color: #002447;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 34px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 34px;
+    bottom: 75px;
+    box-shadow: 4px 5px 7px 0 rgb(30, 37, 43 / 25%);
+    box-sizing: border-box;
+    color: #fff;
+    left: 0;
+    max-width: 68px;
+    overflow: hidden;
+    padding: 20px;
+    position: fixed;
+    white-space: nowrap;
+    z-index: 6;
+
+    &::before {
+        @include for-desktop-up {
+            background-size: 50%;
+            padding-right: 40px;
+            background-position: 25%;
+        }
+
+        background-image: url(/projektJS/icons/up-arrow.png);
+        background-position: 15%;
+        background-repeat: no-repeat;
+        background-size: 35%;
+        content: "";
+        padding-right: 48px;
+        filter: invert(1);
+    }
+
+    &:hover {
+        background-color: #02315e;
+        opacity: 1;
+    }
 }

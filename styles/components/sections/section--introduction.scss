@@ -1,0 +1,18 @@
+.introduction {
+    .col {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+
+        video {
+            @include for-up-to-desktop {
+                width: 100%;
+            }
+            margin: 0 auto;
+            width: 800px;
+        }
+    }
+}

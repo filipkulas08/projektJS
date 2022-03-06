@@ -18,8 +18,6 @@ const menu = () => {
 
             $menu.toggleClass(menuOpenClass);
             $menuTitle.toggleClass(menuOpenClass);
-
-            console.log("dupa");
         });
     };
 

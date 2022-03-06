@@ -1,9 +1,11 @@
 import menu from './menu.js';
 import loginGoogle from './loginGoogle.js';
-import initFirebase from './initFirebase.js';
 import login from './login.js';
 import modal from './modal.js';
 import dateTimePicker from './dateTimePicker.js'
+import countdownTimer from './countdownTimer.js';
+import slider from './slider.js';
+import backToTop from './backToTop.js';
 const Custom = () => {
     const $body = $('body');
     const $document = $(document);
@@ -32,6 +34,9 @@ const Custom = () => {
         login();
         modal();
         dateTimePicker(db);
+        countdownTimer(db);
+        slider();
+        backToTop($window);
     }
 
     init();

@@ -113,7 +113,7 @@
     }
 
     .navigation-title {
-        background-image: url(/projektJS/icons/burger-menu.png);
+        background-image: url(/projektJS/icons/burger-menu.svg);
         background-size: 44px;
         background-repeat: no-repeat;
         background-position: left;
@@ -125,7 +125,7 @@
         filter: invert(1);
 
         &.open {
-            background-image: url(/projektJS/icons/close.png);
+            background-image: url(/projektJS/icons/close.svg);
             position: absolute;
             top: -67px;
         }

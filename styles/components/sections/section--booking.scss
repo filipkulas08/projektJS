@@ -1,7 +1,44 @@
 .booking {
     display: none;
+    background-color: $concrete;
 
     &.visible {
         display: block;
+    }
+
+    .col {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+
+            &.hidden {
+                display: none;
+            }
+
+            input,
+            label {
+                margin-bottom: 20px;
+            }
+            .timepicker {
+                display: none;
+            
+                &.show {
+                    display: block;
+                }
+            }
+        }
+
+        .nextVisit {
+            display: none;
+            text-align: center;
+            &.visible {
+                display: block;
+            }
+        }
     }
 }

@@ -1,19 +1,21 @@
 const dateTimePicker = (db) => {
     var array = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
     const $bookingSection = $('.booking');
-    const $timePicker = $('#timepicker');
+    const $timePicker = $('.timepicker');
+    const userId = localStorage.getItem('userID');
+
     $('#datepicker').datetimepicker({
         onGenerate: function (ct) {
             array = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
         },
 
         onSelectDate: function () {
-            
+
             const $Fulldate = $('#datepicker').datetimepicker('getValue');
             const $year = $Fulldate.getFullYear();
-            const $month = $Fulldate.getMonth() +1;
+            const $month = $Fulldate.getMonth() + 1;
             const $day = $Fulldate.getDate();
-            var date = $day + '/' + $month + '/' + $year;
+            var date = $month + '/' + $day + '/' + $year;
             db.collection("Visits").where("date", "==", date)
                 .get()
                 .then(function (querySnapshot) {
@@ -33,12 +35,11 @@ const dateTimePicker = (db) => {
         weekends: [],
         timepicker: false,
         format: 'd.m.Y',
-        minDate:0
+        minDate: 0
     });
 
     $('#datepicker').on('change', () => {
         $timePicker.addClass('show');
-        console.log(array)
         $('#timepicker').datetimepicker({
             onGenerate: function (array) {},
             datepicker: false,
@@ -49,23 +50,26 @@ const dateTimePicker = (db) => {
 
 
     $('#test').on('click', () => {
-        const $Fulldate = $('#datepicker').datetimepicker('getValue');
-        const $FullHour = $('#timepicker').datetimepicker('getValue');
-        const userId = localStorage.getItem('userID');
-        const $year = $Fulldate.getFullYear();
-        const $month = $Fulldate.getMonth() +1;
-        const $day = $Fulldate.getDate();
-        var date = $day + '/' + $month + '/' + $year;
-        const $hour = $FullHour.getHours() + ':00';
+        var $Fulldate = $('#datepicker').datetimepicker('getValue');
+        var $FullHour = $('#timepicker').datetimepicker('getValue');
+        var $year = $Fulldate.getFullYear();
+        var $month = $Fulldate.getMonth() + 1;
+        var $day = $Fulldate.getDate();
+        var $date = $month + '/' + $day + '/' + $year;
+        var $hour = $FullHour.getHours() + ':00';
+        var $dateNumber = new Date($date + ' ' + $hour).getTime();
+
         db.collection("Visits").add({
-                date: date,
+                date: $date,
                 hour: $hour,
-                userId: userId
+                userId: userId,
+                dateNumber: $dateNumber
 
             })
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
-                console.log(date);
+                console.log($date);
+                location.reload();
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);
@@ -73,9 +77,9 @@ const dateTimePicker = (db) => {
     })
 
     firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
+        if (localStorage.getItem('myPage.expectSignIn')) {
             $bookingSection.addClass('visible');
         }
-      });
+    });
 }
 export default dateTimePicker;

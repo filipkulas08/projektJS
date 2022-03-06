@@ -1,0 +1,56 @@
+.booking {
+  display: none;
+}
+
+.booking.visible {
+  display: block;
+}
+
+.booking .col {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.booking .col .booking-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.booking .col .booking-form.hidden {
+  display: none;
+}
+
+.booking .col .booking-form input,
+.booking .col .booking-form label {
+  margin-bottom: 20px;
+}
+
+.booking .col .booking-form .timepicker {
+  display: none;
+}
+
+.booking .col .booking-form .timepicker.show {
+  display: block;
+}
+
+.booking .col .nextVisit {
+  display: none;
+  text-align: center;
+}
+
+.booking .col .nextVisit.visible {
+  display: block;
+}
+/*# sourceMappingURL=section--booking.css.map */

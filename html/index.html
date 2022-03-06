@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer type="module" src="/projektJS/scripts/index.js"></script>
-    <link rel="stylesheet" href="/projektJS/styles/index.css">
+    <script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script defer type="module" src="/projektJS/scripts/index.min.js"></script>
+    <link rel="stylesheet" href="/projektJS/styles/index.min.css">
     <title>Ćwiczenie 1</title>
+    <link rel="icon" type="image/x-icon" href="/projektJS/icons/logo.svg">
 </head>
 
 <body>
@@ -22,23 +23,23 @@
                         <li class="menu-item-level-1">
                             <a href="#our-services" class="navigation-link menu-link-level-1">
                                 <span>
-                                    Dupa
+                                    Our services
                                 </span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1">
+                            <a href="#booking" class="navigation-link menu-link-level-1">
                                 <span>
-                                    Dupa
+                                    Booking
                                 </span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a href="#" class="navigation-link menu-link-level-1">
+                            <a href="#introduction" class="navigation-link menu-link-level-1">
                                 <span>
-                                    Dupa
+                                    introduction
                                 </span>
                             </a>
                         </li>
@@ -116,7 +117,7 @@
                     <div class="text-media">
                         <div>
                             <a href="#" class="text-media-img-link">
-                                <img src="/projektJS/icons/logo.png" alt="" class="text-media-img">
+                                <img src="/projektJS/icons/logo.svg" alt="" class="text-media-img">
                             </a>
                         </div>
                     </div>
@@ -125,6 +126,7 @@
         </div>
     </header>
     <main>
+        <a href="#" class="backToTopButton" id="backToTop">Back to top</a>
         <div class="modal-window modal-popup login">
             <div class="wrapper">
                 <div class="modal-content">
@@ -134,7 +136,7 @@
                                 <div class="login">
                                     <div>
                                         <div class="icon">
-                                            <img src="/projektJS/icons/close.png" alt="">
+                                            <img src="/projektJS/icons/close.svg" alt="">
                                         </div>
                                         <h2>Welcome back</h2>
                                         <h3>Login</h3>
@@ -170,7 +172,7 @@
                                 <div class="login">
                                     <div>
                                         <div class="icon">
-                                            <img src="/projektJS/icons/close.png" alt="">
+                                            <img src="/projektJS/icons/close.svg" alt="">
                                         </div>
                                         <h2>Welcome</h2>
                                         <h3>Create account</h3>
@@ -209,7 +211,7 @@
                             </div>
                             <div>
                                 <div class="image">
-                                    <img src="/projektJS/images/hero-dentist.png" alt="">
+                                    <img src="/projektJS/images/hero-dentist.webp" alt="">
                                 </div>
                             </div>
                         </div>
@@ -217,122 +219,202 @@
                 </div>
             </div>
         </div>
-        <section id="booking" class="booking">
-            <div class="columnLayoutBlock">
-                <div class="columns">
-                    <div class="col col-large-6-of-12 col-medium-12-of-12 col-small-12-of-12">
-                        <input id="datepicker" type="text">
-                        <input type="text" id="timepicker">
-                        <button id="test">test
-                        </button>
+        <section id="introduction" class="introduction">
+            <div class="section-body">
+                <div class="columnLayoutBlock">
+                    <div class="columns">
+                        <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
+                            <h2>Step into the tooth world</h2>
+                            <h4>You’re never fully dressed without a smile.</h4>
+                            <video controls>
+                                <source src="/projektJS/videos/pexels-pavel-danilyuk-6192970.mp4" type="video/mp4">
+                                Your browser does not support HTML video.
+                            </video>
+                        </div>
                     </div>
-                    <div class="col col-large-6-of-12 col-medium-12-of-12 col-small-12-of-12">
+                </div>
+            </div>
+        </section>
+        <section id="office" class="office">
+            <div class="section-body">
+                <div class="columnLayoutBlock">
+                    <div class="columns">
+                        <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
+                            <h1>Get to know our office</h1>
+                            <div id="slider">
+                                <ul>
+                                    <li>
+                                        <img src="/projektJS/images/slider1.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider2.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider3.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider4.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider5.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider6.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                                    <li>
+                                        <img src="/projektJS/images/slider7.webp" loading="lazy" alt="dental-office">
+                                    </li>
+                            </div>
+                            <div class="button next"></div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="booking" class="booking">
+            <div class="section-body">
+                <div class="columnLayoutBlock">
+                    <div class="columns">
+                        <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
+                            <div class="booking-form">
+                                <label for="date">Click below to choose your date</label>
+                                <input type="text" id="datepicker">
+                                <label for="hour" class="timepicker">Click below to choose your hour:</label>
+                                <input type="text" class="timepicker" id="timepicker">
+                                <button id="test">Submit
+                                </button>
+                            </div>
+                            <div class="nextVisit">
+                                <h3>Your visit will take place in </h3>
+                                <div class="countdown">
+                                    <div class="tiles" id="tiles"></div>
+                                    <div class="labels">
+                                        <li>Days</li>
+                                        <li>Hours</li>
+                                        <li>Mins</li>
+                                        <li>Secs</li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="our-services" class="our-services">
-            <div class="columnLayoutBlock">
-                <div class="columns">
-                    <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
-
-                    </div>
-                </div>
-            </div>
-            <div class="columnLayoutBlock">
-                <div class="columns container">
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/orthodontic.png" alt="orthodontic">
-                                <h4>Orthodontic</h4>
-                                <p>Treatment of malocclusion and maxillofacial defects. Treatment of dysfunction of the
-                                    masticatory organ.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/prosthetic.png" alt="prosthetic">
-                                <h4>Prosthetic</h4>
-                                <p>Reconstruction and restoration of the dentition. Significant improvement in chewing,
-                                    speech and facial aesthetics.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/implant.png" alt="implant">
-                                <h4>Implant</h4>
-                                <p>Restoring lost dentition. Implants perfectly imitate natural teeth, fulfilling their
-                                    functions in every detail. </p>
-                            </div>
+            <div class="section-body">
+                <div class="columnLayoutBlock">
+                    <div class="columns">
+                        <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12 description">
+                            <h3>Our core services</h3><br>
+                            <h4>Comprehensive dental services.<br> We guarantee comfort, convenience and 100% treatment
+                                effectiveness.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="columnLayoutBlock">
-                <div class="columns container">
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/root-canal.png" alt="root-canal">
-                                <h4>Root canal treatment </h4>
-                                <p>Treatment of the chamber and root canals of the tooth. Removal of infected tissue as
-                                    well as bacteria from the center of the canals.</p>
+                <div class="columnLayoutBlock">
+                    <div class="columns container">
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/orthodontic.svg" alt="orthodontic">
+                                    <h4>Orthodontic</h4>
+                                    <p>Treatment of malocclusion and maxillofacial defects. Treatment of dysfunction of
+                                        the
+                                        masticatory organ.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/dental-drill.png" alt="caries-treatment">
-                                <h4>Caries treatment</h4>
-                                <p>Dental health check. Cavity treatment. Caries prevention and treatment. </p>
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/prosthetic.svg" alt="prosthetic">
+                                    <h4>Prosthetic</h4>
+                                    <p>Reconstruction and restoration of the dentition. Significant improvement in
+                                        chewing,
+                                        speech and facial aesthetics.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/baby-teeth.png" alt="children's-dentistry">
-                                <h4>Children's dentistry</h4>
-                                <p>Learning proper oral hygiene. Stress-free treatment in a pleasant atmosphere. </p>
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/implant.svg" alt="implant">
+                                    <h4>Implant</h4>
+                                    <p>Restoring lost dentition. Implants perfectly imitate natural teeth, fulfilling
+                                        their
+                                        functions in every detail. </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="columnLayoutBlock">
-                <div class="columns container">
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/dental-surgery.png" alt="dental-surgery">
-                                <h4>Dental surgery</h4>
-                                <p>Oral treatment and surgery. Extraction of impacted teeth, wisdom teeth and others</p>
+                <div class="columnLayoutBlock">
+                    <div class="columns container">
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/root-canal.svg" alt="root-canal">
+                                    <h4>Root canal treatment </h4>
+                                    <p>Treatment of the chamber and root canals of the tooth. Removal of infected tissue
+                                        as
+                                        well as bacteria from the center of the canals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/dental-drill.svg" alt="caries-treatment">
+                                    <h4>Caries treatment</h4>
+                                    <p>Dental health check. Cavity treatment. Caries prevention and treatment. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/baby-teeth.svg" alt="children's-dentistry">
+                                    <h4>Children's dentistry</h4>
+                                    <p>Learning proper oral hygiene. Stress-free treatment in a pleasant atmosphere.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/healthy-tooth.png" alt="teeth-whitening">
-                                <h4>Teeth whitening</h4>
-                                <p>Restoring the natural color of the teeth so that they look like they used to be.</p>
+                </div>
+                <div class="columnLayoutBlock">
+                    <div class="columns container">
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/tooth-extraction.svg" alt="dental-surgery">
+                                    <h4>Dental surgery</h4>
+                                    <p>Oral treatment and surgery. Extraction of impacted teeth, wisdom teeth and others
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
-                        <div class="box">
-                            <div class="content">
-                                <img src="/projektJS/icons/scaling.png" alt="scaling">
-                                <h4>Scaling</h4>
-                                <p>Removal of tartar. It protects our teeth and oral cavity against the growth of
-                                    bacteria.</p>
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/healthy-tooth.svg" alt="teeth-whitening">
+                                    <h4>Teeth whitening</h4>
+                                    <p>Restoring the natural color of the teeth so that they look like they used to be.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
+                            <div class="box">
+                                <div class="content">
+                                    <img src="/projektJS/icons/scaling.svg" alt="scaling">
+                                    <h4>Scaling</h4>
+                                    <p>Removal of tartar. It protects our teeth and oral cavity against the growth of
+                                        bacteria.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -340,7 +422,64 @@
             </div>
         </section>
     </main>
-
+    <footer class="footer ">
+        <div class="columnLayoutBlock section basic-columns">
+            <div class="columns ">
+                <section class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
+                    <div class="textAndMedia section  footer-logos">
+                        <div class="text-media">
+                            <div>
+                                <a class="text-media-img-link" href="https://futureofvision.global/home.html">
+                                    <img src="/projektJS/icons/logo.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="textAndMedia footer-copywrite references section">
+                        <div class="text-media " data-component="text-media" data-role="footer-copywrite references"
+                            data-content-featured="false">
+                            <div>
+                                <div class="text-media-article">
+                                    <p><a href="https://www.roche.com/about.htm" target="_blank">&gt; About Us</a>&nbsp;
+                                        <a href="https://www.roche.com/contact.htm" target="_blank">&gt; Contact
+                                            Us&nbsp;</a>&nbsp;&nbsp;<a href="https://www.roche.com/legal_statement.htm"
+                                            target="_blank">&gt; Legal Statement&nbsp;</a>&nbsp;<a
+                                            href="https://www.roche.com/privacy_policy.htm" target="_blank">&gt; Privacy
+                                            Statement</a>&nbsp;<a href="#" class="ot-sdk-show-settings"
+                                            target="_blank">Preferencje dotyczące plików cookie</a>&nbsp;<a
+                                            href="https://medinfo.roche.com/" target="_blank">&gt; MedInfo</a></p>
+                                    <p>© 2021 F. Hoffmann-La Roche Ltd&nbsp;M-XX-00007885 DATE OF
+                                        PREPARATION:&nbsp;January 2022<br>
+                                    </p>
+                                    <p>This website is a global information resource for a public audience, outside of
+                                        the United States of America and United Kingdom. This website is produced by
+                                        Roche and is not intended to provide medical advice and/or treatment guidance.
+                                        The content on this website is non-promotional and does not make specific
+                                        reference to the availability or the use of a medicine.<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-media-description">
+                                    <p>Find Us</p>
+                                    <ul>
+                                        <li><a href="https://www.linkedin.com"
+                                                target="_blank" class="linkedin">LinkedIn</a>&nbsp;</li>
+                                        <li><a href="https://www.facebook.com" target="_blank"
+                                                class="facebook">Facebook</a>&nbsp;</li>
+                                        <li><a href="https://www.instagram.com" target="_blank"
+                                                class="instagram">Instagram</a>&nbsp;</li>
+                                        <li><a href="https://twitter.com" target="_blank"
+                                                class="twitter">Twitter</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="/projektJS/scripts/jquery.datetimepicker.full.min.js"></script>
 
