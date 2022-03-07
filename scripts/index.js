@@ -25,9 +25,7 @@ const Custom = () => {
       const app = firebase.initializeApp(firebaseConfig);
       const perf = firebase.performance(app);
       const db = firebase.firestore(app);
-
-
-
+      
         // initFirebase();
         menu();
         loginGoogle();
