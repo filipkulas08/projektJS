@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dental clinic website">
+    <script defer type="module" src="/projektJS/scripts/index.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-performance.js"></script>
     <script src="/projektJS/scripts/jquery.min.js"></script>
-    <script defer type="module" src="/projektJS/scripts/index.min.js"></script>
     <script defer src="/projektJS/scripts/jquery.datetimepicker.full.min.js"></script>
-    <link rel="stylesheet" href="/projektJS/styles/index.min.css">
+    <link rel="preload" href="/projektJS/styles/index.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/projektJS/styles/index.min.css"></noscript>
+    <!-- <link rel="stylesheet" href="/projektJS/styles/index.min.css"> -->
     <title>Dental Clinic</title>
     <link rel="icon" type="image/x-icon" href="/projektJS/icons/logo.svg">
 </head>
@@ -92,19 +95,19 @@
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a aria-label="Login" class="navigation-link menu-link-level-1 loginButton open">
+                            <a href="#"aria-label="Login" class="navigation-link menu-link-level-1 loginButton open">
                                 <span>Login</span>
                             </a>
                         </li>
 
-                        <li class="menu-item-level-1">
-                            <a aria-label="Register" class="navigation-link menu-link-level-1 registerButton open">
+                        <li href="#" class="menu-item-level-1">
+                            <a href ="#" aria-label="Register" class="navigation-link menu-link-level-1 registerButton open">
                                 <span>Register</span>
                             </a>
                         </li>
 
                         <li class="menu-item-level-1">
-                            <a aria-label="Logout" class="navigation-link menu-link-level-1 logoutButton">
+                            <a href="#" aria-label="Logout" class="navigation-link menu-link-level-1 logoutButton">
                                 <span>Logout</span>
                             </a>
                         </li>
@@ -135,7 +138,7 @@
                     <div class="text-media">
                         <div>
                             <a aria-label="logo" href="#" class="text-media-img-link">
-                                <img src="/projektJS/icons/logo.svg" alt="" class="text-media-img">
+                                <img src="/projektJS/icons/logo.svg" alt="" class="text-media-img" width="90" height="90">
                             </a>
                         </div>
                     </div>
@@ -154,7 +157,7 @@
                                 <div class="login">
                                     <div>
                                         <div class="icon">
-                                            <img src="/projektJS/icons/close.svg" alt="">
+                                            <img src="/projektJS/icons/close.svg" alt="close" width="25" height="25">
                                         </div>
                                         <h2>Welcome back</h2>
                                         <h3>Login</h3>
@@ -173,7 +176,7 @@
 
                             <div class="col col-large-7-of-12 col-medium-7-of-12 col-small-12-of-12">
                                 <div class="image-div">
-                                    <img src="/projektJS/images/publicdomainq-dentist.svg" alt="">
+                                    <img src="/projektJS/images/publicdomainq-dentist.svg" alt="dentist" width="485" height="397">
                                 </div>
                             </div>
                         </div>
@@ -190,7 +193,7 @@
                                 <div class="login">
                                     <div>
                                         <div class="icon">
-                                            <img src="/projektJS/icons/close.svg" alt="">
+                                            <img src="/projektJS/icons/close.svg" alt="close" width="25" height="25">
                                         </div>
                                         <h2>Welcome</h2>
                                         <h3>Create account</h3>
@@ -208,7 +211,7 @@
 
                             <div class="col col-large-6-of-12 col-medium-6-of-12 col-small-12-of-12">
                                 <div class="image-div">
-                                    <img src="/projektJS/images/publicdomainq-dentist.svg" alt="">
+                                    <img src="/projektJS/images/publicdomainq-dentist.svg" alt="dentist" width="485" height="284">
                                 </div>
                             </div>
                         </div>
@@ -229,7 +232,7 @@
                             </div>
                             <div>
                                 <div class="image">
-                                    <img src="/projektJS/images/hero-dentist.webp" alt="">
+                                    <img src="/projektJS/images/hero-dentist.webp" alt="hero dentist" width="338" height="450">
                                 </div>
                             </div>
                         </div>
@@ -269,7 +272,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/orthodontic.svg" alt="orthodontic">
+                                    <img src="/projektJS/icons/orthodontic.svg" alt="orthodontic" width="85" height="85">
                                     <h4>Orthodontic</h4>
                                     <p>Treatment of malocclusion and maxillofacial defects. Treatment of dysfunction of
                                         the
@@ -280,7 +283,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/prosthetic.svg" alt="prosthetic">
+                                    <img src="/projektJS/icons/prosthetic.svg" alt="prosthetic" width="85" height="85">
                                     <h4>Prosthetic</h4>
                                     <p>Reconstruction and restoration of the dentition. Significant improvement in
                                         chewing,
@@ -291,7 +294,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/implant.svg" alt="implant">
+                                    <img src="/projektJS/icons/implant.svg" alt="implant" width="85" height="85">
                                     <h4>Implant</h4>
                                     <p>Restoring lost dentition. Implants perfectly imitate natural teeth, fulfilling
                                         their
@@ -306,7 +309,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/root-canal.svg" alt="root-canal">
+                                    <img src="/projektJS/icons/root-canal.svg" alt="root-canal" width="85" height="85">
                                     <h4>Root canal treatment </h4>
                                     <p>Treatment of the chamber and root canals of the tooth. Removal of infected tissue
                                         as
@@ -317,7 +320,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/dental-drill.svg" alt="caries-treatment">
+                                    <img src="/projektJS/icons/dental-drill.svg" alt="caries-treatment" width="85" height="85">
                                     <h4>Caries treatment</h4>
                                     <p>Dental health check. Cavity treatment. Caries prevention and treatment. </p>
                                 </div>
@@ -326,7 +329,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/baby-teeth.svg" alt="children's-dentistry">
+                                    <img src="/projektJS/icons/baby-teeth.svg" alt="children's-dentistry" width="85" height="85">
                                     <h4>Children's dentistry</h4>
                                     <p>Learning proper oral hygiene. Stress-free treatment in a pleasant atmosphere.
                                     </p>
@@ -340,7 +343,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/tooth-extraction.svg" alt="dental-surgery">
+                                    <img src="/projektJS/icons/tooth-extraction.svg" alt="dental-surgery" width="85" height="85">
                                     <h4>Dental surgery</h4>
                                     <p>Oral treatment and surgery. Extraction of impacted teeth, wisdom teeth and others
                                     </p>
@@ -350,7 +353,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/healthy-tooth.svg" alt="teeth-whitening">
+                                    <img src="/projektJS/icons/healthy-tooth.svg" alt="teeth-whitening" width="85" height="85">
                                     <h4>Teeth whitening</h4>
                                     <p>Restoring the natural color of the teeth so that they look like they used to be.
                                     </p>
@@ -360,7 +363,7 @@
                         <div class="col col-large-3-of-12 col-medium-12-of-12 col-small-12-of-12 card">
                             <div class="box">
                                 <div class="content">
-                                    <img src="/projektJS/icons/scaling.svg" alt="scaling">
+                                    <img src="/projektJS/icons/scaling.svg" alt="scaling" width="85" height="85">
                                     <h4>Scaling</h4>
                                     <p>Removal of tartar. It protects our teeth and oral cavity against the growth of
                                         bacteria.</p>
@@ -376,34 +379,34 @@
                 <div class="columnLayoutBlock">
                     <div class="columns">
                         <div class="col col-large-12-of-12 col-medium-12-of-12 col-small-12-of-12">
-                            <h1>
+                            <h3>
                                 Get to know our office
-                            </h1>
-                            <h2>
+                            </h3>
+                            <h4>
                                 We have a modern, one of the best equipped offices in Poland, ready to receive patients.
-                            </h2>
+                            </h4>
                             <div class="slider" id="slider">
                                 <ul>
                                     <li>
-                                        <img src="/projektJS/images/slider1.webp" loading="lazy" alt="dental-office">
+                                        <img src="/projektJS/images/slider1.webp" loading="lazy" alt="dental-office" width="640" height="427">
                                     </li>
                                     <li>
-                                        <img src="/projektJS/images/slider2.webp" loading="lazy" alt="dental-office">
+                                        <img src="/projektJS/images/slider2.webp" loading="lazy" alt="dental-office" width="640" height="427">
                                     </li>
                                     <li>
-                                        <img src="/projektJS/images/slider3.webp" loading="lazy" alt="dental-office">
+                                        <img src="/projektJS/images/slider3.webp" loading="lazy" alt="dental-office" width="640" height="427">
                                     </li>
                                     <li>
-                                        <img src="/projektJS/images/slider4.webp" loading="lazy" alt="dental-office">
+                                        <img src="/projektJS/images/slider4.webp" loading="lazy" alt="dental-office" width="640" height="427">
                                     </li>
                                     <li>
-                                        <img src="/projektJS/images/slider5.webp" loading="lazy" alt="dental-office">
+                                        <img src="/projektJS/images/slider5.webp" loading="lazy" alt="dental-office" width="640" height="427">
                                     </li>
                                     <li>
-                                        <img src="/projektJS/images/slider6.webp" loading="lazy" alt="dental-office">
+                                        <img src="/projektJS/images/slider6.webp" loading="lazy" alt="dental-office" width="640" height="427">
                                     </li>
                                     <li>
-                                        <img src="/projektJS/images/slider7.webp" loading="lazy" alt="dental-office">
+                                        <img src="/projektJS/images/slider7.webp" loading="lazy" alt="dental-office" width="640" height="427">
                                     </li>
                             </div>
                             <div class="button next"></div>
@@ -477,7 +480,7 @@
                             <div>
                                 <a aria-label="logo2" class="text-media-img-link"
                                     href="https://futureofvision.global/home.html">
-                                    <img src="/projektJS/icons/logo.svg" alt="logo">
+                                    <img src="/projektJS/icons/logo.svg" alt="logo" width="90" height="90">
                                 </a>
                             </div>
                         </div>

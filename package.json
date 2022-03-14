@@ -1,0 +1,23 @@
+{
+  "name": "projektJS",
+  "version": "1.0.0",
+  "description": "asd sda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipkulas08/magisterka---javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipkulas08/magisterka---javascript/issues"
+  },
+  "homepage": "https://github.com/filipkulas08/magisterka---javascript#readme",
+  "dependencies": {
+    "firebase": "^9.6.8"
+  }
+}
