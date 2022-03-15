@@ -1,7 +1,6 @@
 const countdownTimer = (db) => {
     const $bookingForm = $('.booking-form');
     const $nextVisit = $('.nextVisit');
-    // const countdownTiles = document.getElementById("tiles");
     const $countdownTiles = $(".tiles");
     const userId = localStorage.getItem('userID');
     var today = new Date().getTime();
@@ -30,8 +29,6 @@ const countdownTimer = (db) => {
     
     var countdown = (date,hour) => {
         var countdownDate = new Date(date + ' ' + hour).getTime();
-        console.log(countdownDate);
-
         var x = setInterval(function() {
 
             var now = new Date().getTime();

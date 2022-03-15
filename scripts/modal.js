@@ -22,20 +22,6 @@ const modal = () => {
         $registerModal.removeClass('open');
     });
 
-    // firebase.auth().onAuthStateChanged(user => {
-    //     if(user) {
-    //         $openLoginButton.removeClass('open');
-    //         $openRegisterButton.removeClass('open');
-    //         $logutButton.addClass('open');
-            
-    //     } else {
-    //         $openLoginButton.addClass('open');
-    //         $openRegisterButton.addClass('open');
-    //         $logutButton.removeClass('open');
-            
-    //     }
-    // })
-
     if (localStorage.getItem('myPage.expectSignIn')) {
         $openLoginButton.removeClass('open');
         $openRegisterButton.removeClass('open');
