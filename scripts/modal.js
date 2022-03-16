@@ -5,6 +5,7 @@ const modal = () => {
     const $loginModal = $('.modal-popup.login');
     const $registerModal = $('.modal-popup.register');
     const $closeButton = $('.modal-popup').find('.icon');
+    const $bookingLink = $('.book');
     
     $openLoginButton.on('click', (event) => {
         event.preventDefault();
@@ -26,10 +27,13 @@ const modal = () => {
         $openLoginButton.removeClass('open');
         $openRegisterButton.removeClass('open');
         $logutButton.addClass('open');
+        $bookingLink.removeClass('hidden');
+        
     } else {
         $openLoginButton.addClass('open');
         $openRegisterButton.addClass('open');
         $logutButton.removeClass('open');
+        $bookingLink.addClass('hidden');
     }
 }
 

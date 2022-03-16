@@ -14,9 +14,13 @@
     }
 
     .wrapper {
+        @include for-desktop-up {
+            box-shadow: 0 2px 24px 4px rgba($black, .35);
+            width: 80%;
+        }
+
         background: $white;
         border-radius: 15px;
-        box-shadow: 0 2px 24px 4px rgba($black, .35);
         display: block;
         left: 50%;
         max-height: 100vh;
@@ -25,7 +29,7 @@
         position: relative;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 80%;
+        width: 100%;
         z-index: 11;
 
         .modal-content {
@@ -56,6 +60,10 @@
 
                         h2,
                         h3 {
+                            @include for-up-to-desktop {
+                                text-align: center;
+                            }
+
                             color: $jade;
                             margin-bottom: 40px;
                         }
@@ -64,6 +72,11 @@
                             margin-bottom: 40px;
 
                             input {
+                                @include for-up-to-desktop {
+                                    max-width: unset;
+                                    width: 100%;
+                                }
+
                                 background: $white;
                                 background-position: bottom right;
                                 background-repeat: no-repeat;
@@ -131,6 +144,11 @@
                         }
 
                         button {
+                            @include for-up-to-desktop {
+                                margin-bottom: 20px;
+                                width: 100%;
+                            }
+
                             background-color: $jade;
                             width: 150px;
 

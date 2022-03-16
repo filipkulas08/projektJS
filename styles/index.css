@@ -52,8 +52,23 @@ table {
   border-spacing: 0;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important;
+}
+
 @media (min-width: 1170px) {
-  .desktop-hidden {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 1170px) {
+  .hidden-mobile {
     display: none;
   }
 }
@@ -93,6 +108,12 @@ h4 {
   font-size: 22px;
   font-weight: 500;
   line-height: 36px;
+}
+
+@media (max-width: 1170px) {
+  .justify {
+    text-align: justify;
+  }
 }
 
 button {
@@ -189,8 +210,9 @@ section .section-body {
     font-size: 18px;
     letter-spacing: -.18px;
     line-height: 1.55;
-    max-width: 204px;
     padding: 16px 24px 16px 20px;
+    -webkit-transition: .8s;
+    transition: .8s;
   }
 }
 
@@ -206,21 +228,18 @@ section .section-body {
 }
 
 @media (min-width: 1170px) {
-  .backToTopButton::before {
-    background-position: 25%;
-    background-size: 50%;
-    padding-right: 40px;
+  .backToTopButton:hover {
+    background-color: #02315e;
+    opacity: 1;
+    max-width: 220px;
   }
 }
 
-.backToTopButton:hover {
-  background-color: #02315e;
-  opacity: 1;
-}
-
-@media (max-width: 1170px) {
-  .columnLayoutBlock {
-    padding: 0 12px;
+@media (min-width: 1170px) and (min-width: 1170px) {
+  .backToTopButton:hover::before {
+    background-position: 25%;
+    background-size: 50%;
+    padding-right: 40px;
   }
 }
 
@@ -437,7 +456,7 @@ section .section-body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 180px;
+  height: 100vh;
   left: 0;
   outline: 1px solid #ffffff;
   top: 90px;
@@ -469,12 +488,14 @@ section .section-body {
   list-style: none;
   margin: 0;
   overflow-y: auto;
+  padding: 0 20px;
   position: absolute;
   top: 0;
   width: 100%;
 }
 
 .mobile-nav .menu-wrapper li.menu-item-level-1 {
+  border-bottom: 1px solid #dddddd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -499,17 +520,16 @@ section .section-body {
 .mobile-nav .menu-wrapper li a {
   color: #ffffff;
   font-size: 28px;
-  text-align: center;
 }
 
 .mobile-nav .menu-wrapper .menu-link-level-1 {
-  font-size: 18px;
+  font-size: 28px;
 }
 
 .mobile-nav .menu-link-level-1 {
   display: block;
   height: 100%;
-  padding: 12px 4px;
+  padding: 20px 4px;
   width: 100%;
 }
 
@@ -595,8 +615,6 @@ section .section-body {
 .modal-popup .wrapper {
   background: #ffffff;
   border-radius: 15px;
-  -webkit-box-shadow: 0 2px 24px 4px rgba(0, 0, 0, 0.35);
-          box-shadow: 0 2px 24px 4px rgba(0, 0, 0, 0.35);
   display: block;
   left: 50%;
   max-height: 100vh;
@@ -606,8 +624,16 @@ section .section-body {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 80%;
+  width: 100%;
   z-index: 11;
+}
+
+@media (min-width: 1170px) {
+  .modal-popup .wrapper {
+    -webkit-box-shadow: 0 2px 24px 4px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 2px 24px 4px rgba(0, 0, 0, 0.35);
+    width: 80%;
+  }
 }
 
 @media (min-width: 1170px) {
@@ -654,6 +680,13 @@ section .section-body {
   margin-bottom: 40px;
 }
 
+@media (max-width: 1170px) {
+  .modal-popup .wrapper .modal-content .columns .col:first-of-type h2,
+  .modal-popup .wrapper .modal-content .columns .col:first-of-type h3 {
+    text-align: center;
+  }
+}
+
 .modal-popup .wrapper .modal-content .columns .col:first-of-type .form {
   margin-bottom: 40px;
 }
@@ -673,6 +706,13 @@ section .section-body {
   padding: 20px 0;
   -webkit-transition: .3s ease;
   transition: .3s ease;
+}
+
+@media (max-width: 1170px) {
+  .modal-popup .wrapper .modal-content .columns .col:first-of-type .form input {
+    max-width: unset;
+    width: 100%;
+  }
 }
 
 .modal-popup .wrapper .modal-content .columns .col:first-of-type .form input.emailInput {
@@ -738,6 +778,13 @@ section .section-body {
 .modal-popup .wrapper .modal-content .columns .col:first-of-type button {
   background-color: #00A36C;
   width: 150px;
+}
+
+@media (max-width: 1170px) {
+  .modal-popup .wrapper .modal-content .columns .col:first-of-type button {
+    margin-bottom: 20px;
+    width: 100%;
+  }
 }
 
 .modal-popup .wrapper .modal-content .columns .col:first-of-type button.googleButton {
@@ -1921,8 +1968,9 @@ section .section-body {
 }
 
 footer {
-  background-color: #f2f2f2;
+  background-color: #011736;
   bottom: 0;
+  color: #ffffff;
   font-size: 16px;
   width: 100%;
 }

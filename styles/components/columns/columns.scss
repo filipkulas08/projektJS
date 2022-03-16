@@ -1,8 +1,4 @@
 .columnLayoutBlock {
-    @include for-up-to-desktop {
-        padding: 0 12px;
-    }
-
     .columns {
         @include for-desktop-up {
             .col {

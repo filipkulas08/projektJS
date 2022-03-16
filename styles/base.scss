@@ -1,6 +1,20 @@
-.desktop-hidden {
-    @include for-desktop-up {
-        display: none;
+* {
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none !important;
+
+    &-desktop {
+        @include for-desktop-up {
+            display: none;
+        }
+    }
+
+    &-mobile {
+        @include for-up-to-desktop {
+            display: none;
+        }
     }
 }
 
@@ -39,6 +53,12 @@ h4 {
     font-size: 22px;
     font-weight: 500;
     line-height: 36px;
+}
+
+.justify {
+    @include for-up-to-desktop {
+        text-align: justify;
+    }
 }
 
 button {
@@ -111,8 +131,8 @@ section {
         font-size: 18px;
         letter-spacing: -.18px;
         line-height: 1.55;
-        max-width: 204px;
         padding: 16px 24px 16px 20px;
+        transition: .8s;
     }
 
     background-color: $prussian-blue;
@@ -133,12 +153,6 @@ section {
     z-index: 6;
 
     &::before {
-        @include for-desktop-up {
-            background-position: 25%;
-            background-size: 50%;
-            padding-right: 40px;
-        }
-
         background-image: url(/projektJS/icons/up-arrow.png);
         background-position: 15%;
         background-repeat: no-repeat;
@@ -149,7 +163,18 @@ section {
     }
 
     &:hover {
-        background-color: $astronaut-blue;
-        opacity: 1;
+        @include for-desktop-up {
+            background-color: $astronaut-blue;
+            opacity: 1;
+            max-width: 220px;
+
+            &::before {
+                @include for-desktop-up {
+                    background-position: 25%;
+                    background-size: 50%;
+                    padding-right: 40px;
+                }
+            }
+        }
     }
 }
