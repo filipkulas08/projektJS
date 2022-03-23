@@ -7,7 +7,7 @@
         flex-direction: column;
         text-align: center;
     }
-    
+
     .container {
         display: flex;
         justify-content: center;
@@ -46,7 +46,9 @@
                 transition: 0.5s;
 
                 &:hover {
-                    transform: translateY(-50px);
+                    @include for-desktop-up {
+                        transform: translateY(-50px);
+                    }
                 }
 
                 &:before {
