@@ -1625,9 +1625,11 @@ section .section-body {
   transition: 0.5s;
 }
 
-.our-services .container .card .box:hover {
-  -webkit-transform: translateY(-50px);
-          transform: translateY(-50px);
+@media (min-width: 1170px) {
+  .our-services .container .card .box:hover {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
 }
 
 .our-services .container .card .box:before {
