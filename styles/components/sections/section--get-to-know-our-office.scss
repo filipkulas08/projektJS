@@ -16,7 +16,7 @@
       li {
         @include for-up-to-desktop {
           height: calc(427px/1.9);
-          width: calc(640px/1.9);
+          width: calc(840px/1.9);
         }
 
         background: $silver;
@@ -32,7 +32,13 @@
         width: 840px;
 
         img {
+          @include for-up-to-desktop {
+            max-height: 100%;
+            max-width: 100%;
+          }
+          
           width: 100%;
+          object-fit: cover;
         }
       }
     }

@@ -1837,12 +1837,21 @@ section .section-body {
 @media (max-width: 1170px) {
   .office .slider ul li {
     height: calc(427px/1.9);
-    width: calc(640px/1.9);
+    width: calc(840px/1.9);
   }
 }
 
 .office .slider ul li img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 1170px) {
+  .office .slider ul li img {
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
 
 .office h3,
