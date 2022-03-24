@@ -1,71 +1,131 @@
-h1 {
+.office .slide-item {
+  width: 300px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-align: center;
-  font-weight: 300;
+  line-height: 30px;
+  background: orange;
+  margin: 0;
+  position: relative;
+  float: left;
 }
 
-#slider {
+.office .slide-wrap-2 img {
+  float: left;
+  user-drag: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.office .slide-wrap {
+  position: relative;
+  background: yellow;
+}
+
+.office #slideshow {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100vw;
+  position: absolute;
+  overflow: hidden;
+}
+
+.office .slide-wrap-2 {
+  position: relative;
+}
+
+.office .slide-wrap-2-not-dragging {
+  -webkit-transition: left .3s ease-out;
+  transition: left .3s ease-out;
+}
+
+.office #slideshow-outer {
+  width: 100vw;
   position: relative;
   overflow: hidden;
-  margin: 20px auto 0 auto;
-  border-radius: 4px;
 }
 
-#slider ul {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 200px;
-  list-style: none;
-}
-
-#slider ul li {
-  position: relative;
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 500px;
-  height: 300px;
-  background: #ccc;
-  text-align: center;
-  line-height: 300px;
-}
-
-a.control_prev, a.control_next {
+.office .rightBtn i {
   position: absolute;
-  top: 40%;
-  z-index: 999;
-  display: block;
-  padding: 4% 3%;
-  width: auto;
-  height: auto;
-  background: #2a2a2a;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  opacity: 0.8;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.office .rightBtn:active, .office .leftBtn:active {
+  -webkit-filter: opacity(90%);
+          filter: opacity(90%);
+  border: none;
+}
+
+.office .rightBtn:focus, .office .leftBtn:focus {
+  outline: 0;
+  border: 2px solid #81ecec;
+}
+
+.office .rightBtn, .office .leftBtn {
   cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background: #bac2d1;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 5px;
 }
 
-a.control_prev:hover, a.control_next:hover {
-  opacity: 1;
-  -webkit-transition: all 0.2s ease;
+.office .rightBtn {
+  right: 5px;
+  left: unset;
 }
 
-a.control_prev {
-  border-radius: 0 2px 2px 0;
+.office .idPos {
+  width: 100%;
+  background: yellow;
+  position: absolute;
+  top: unset;
+  left: 0;
+  z-index: 98;
 }
 
-a.control_next {
-  right: 0;
-  border-radius: 2px 0 0 2px;
+.office .spam {
+  position: absolute;
+  z-index: 111;
+  width: 100%;
+  height: 100%;
 }
 
-.slider_option {
+.office .idPosItem {
+  background: #81ecec;
+  width: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  height: 12px;
+  cursor: pointer;
+  float: left;
+  margin: 3.5px;
   position: relative;
-  margin: 10px auto;
-  width: 160px;
-  font-size: 18px;
+  top: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.58, 1.49, 0.68, 0.53);
+  transition: all 0.3s cubic-bezier(0.58, 1.49, 0.68, 0.53);
+  z-index: 99;
+}
+
+.office .idPos2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 /*# sourceMappingURL=section--get-to-know-our-office.css.map */

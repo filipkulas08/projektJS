@@ -1,44 +1,45 @@
 const slider = () => {
-    
+
+    var carousel = document.querySelector('.carousel');
+    var container = carousel.querySelector('.carousel-container');
+    var prevBtn = carousel.querySelector('.carousel-prev');
+    var nextBtn = carousel.querySelector('.carousel-next');
+    var pagination = carousel.querySelector('.carousel-pagination');
+    var bullets = [].slice.call(carousel.querySelectorAll('.carousel-bullet'));
+    var totalItems = container.querySelectorAll('.carousel-item').length;
+    var percent = (100 / totalItems);
+    var currentIndex = 0;
+
     setInterval(function () {
-        moveRight();
+        next();
     }, 3000);
-  
-	var slideCount = $('#slider ul li').length;
-	var slideWidth = $('#slider ul li').width();
-	var slideHeight = $('#slider ul li').height();
-	var sliderUlWidth = slideCount * slideWidth;
-	
-	$('#slider').css({ width: slideWidth, height: slideHeight });
-	
-	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-	
-    $('#slider ul li:last-child').prependTo('#slider ul');
 
-    function moveLeft() {
-        $('#slider ul').animate({
-            left: + slideWidth
-        }, 200, function () {
-            $('#slider ul li:last-child').prependTo('#slider ul');
-            $('#slider ul').css('left', '');
-        });
-    };
+    function next() {
+        slideTo(currentIndex + 1);
+    }
 
-    function moveRight() {
-        $('#slider ul').animate({
-            left: - slideWidth
-        }, 200, function () {
-            $('#slider ul li:first-child').appendTo('#slider ul');
-            $('#slider ul').css('left', '');
-        });
-    };
+    function prev() {
+        slideTo(currentIndex - 1);
+    }
 
-    $('a.control_prev').click(function () {
-        moveLeft();
-    });
+    function slideTo(index) {
+        index = index < 0 ? totalItems - 1 : index >= totalItems ? 0 : index;
+        container.style.WebkitTransform = container.style.transform = 'translate(-' + (index * percent) + '%, 0)';
+        bullets[currentIndex].classList.remove('active-bullet');
+        bullets[index].classList.add('active-bullet');
+        currentIndex = index;
+    }
 
-    $('a.control_next').click(function () {
-        moveRight();
-    });
+    bullets[currentIndex].classList.add('active-bullet');
+    prevBtn.addEventListener('click', prev, false);
+    nextBtn.addEventListener('click', next, false);
+
+    pagination.addEventListener('click', function (e) {
+        var index = bullets.indexOf(e.target);
+        if (index !== -1 && index !== currentIndex) {
+            slideTo(index);
+        }
+    }, false);
+
 }
 export default slider;

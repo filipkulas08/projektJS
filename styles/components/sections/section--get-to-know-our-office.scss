@@ -1,51 +1,136 @@
 .office {
-  background-color: $concrete;
+    h1 {
+        color: #555;
+        margin: 50px 0;
+        text-align: center;
+    }
 
-  .slider {
-    border-radius: 4px;
-    margin: 20px auto 0 auto;
-    overflow: hidden;
-    position: relative;
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      position: relative;
-
-      li {
+    .container {
         @include for-up-to-desktop {
-          height: calc(427px/1.9);
-          width: calc(840px/1.9);
+            width: 100%;
         }
 
-        background: $silver;
-        display: block;
-        float: left;
-        height: 427px;
-        line-height: 300px;
-        margin: 0;
-        padding: 0;
+        border: 2px solid #bbb;
+        margin: 0 auto;
 
-        position: relative;
-        text-align: center;
         width: 840px;
 
-        img {
-          @include for-up-to-desktop {
-            max-height: 100%;
-            max-width: 100%;
-          }
-          
-          width: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-  }
+        .carousel {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
 
-  h3,
-  h4 {
-    text-align: center;
-  }
+            &-container {
+                list-style: none;
+                margin: 0;
+                max-height: 427px;
+                overflow: hidden;
+                padding: 0;
+                transition: transform 0.3s cubic-bezier(.694, .0482, .335, 1);
+                width: 500%;
+
+                .carousel-item {
+                    @include for-up-to-desktop {
+                        max-height: 250px;
+                    }
+
+                    float: left;
+
+                    position: relative;
+                    width: 20%;
+
+                    &>img {
+                        @include for-up-to-desktop {
+                            max-height: 250px;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+
+                &-prev,
+                &-next {
+                    background-color: #222;
+                    border-radius: 50%;
+                    color: #fff;
+                    cursor: pointer;
+                    font-size: 1em;
+                    height: 40px;
+                    line-height: 40px;
+                    opacity: 0.7;
+                    position: absolute;
+                    text-align: center;
+                    top: 50%;
+                    -webkit-transform: translate(0, -50%);
+                    transform: translate(0, -50%);
+                    transition: opacity 0.3s ease;
+                    width: 40px;
+                    z-index: 10;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                &-prev {
+                    left: 2%;
+                    padding-right: 3px;
+
+                    &::before {
+                        content: '<';
+                        font-family: "FontAwesome";
+                    }
+                }
+
+                &-next {
+                    padding-left: 3px;
+                    right: 2%;
+
+                    &::before {
+                        content: '>';
+                        font-family: "FontAwesome";
+                    }
+                }
+
+            &-pagination {
+                bottom: 3%;
+                left: 0;
+                list-style: none;
+                margin: 0 auto;
+                padding: 0;
+                position: absolute;
+                right: 0;
+                text-align: center;
+                width: 50%;
+                z-index: 10;
+
+                .carousel-bullet {
+                    background-color: #000;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: inline-block;
+                    height: 12px;
+                    margin: 0 7px;
+                    opacity: 0.5;
+                    transition-duration: 0.3s;
+                    transition-property: transform, opacity, background-color;
+                    width: 12px;
+
+                    &:hover {
+                        -webkit-transform: scale(1.3);
+                        transform: scale(1.3);
+                    }
+
+                    &.active-bullet,
+                    &.active-bullet:hover {
+                        background-color: #fff;
+                        cursor: default;
+                        opacity: 1;
+                        -webkit-transform: scale(1.3);
+                        transform: scale(1.3);
+                    }
+                }
+            }
+        }
+    }
 }
